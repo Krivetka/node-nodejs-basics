@@ -14,8 +14,7 @@ const compress = async () => {
   const writeFileStream = createWriteStream(destination);
   await pipeline(readFileStream, gzip, writeFileStream, (err) => {
     if (err) {
-      process.stdout.write(errMessage + '\n');
-      process.exitCode = 1;
+      process.stdout.write(errMessage);
     }
   });
 };
