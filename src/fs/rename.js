@@ -1,8 +1,12 @@
 import { existsSync, renameSync } from "node:fs";
+import { dirname } from "node:path";
+import { fileURLToPath } from "node:url";
 
 const rename = async () => {
-  const wrongFilePath = "src/fs/files/wrongFilename.txt";
-  const correctFilePath = "src/fs//files/properFilename.md";
+  const __filename = fileURLToPath(import.meta.url);
+  const __dirname = dirname(__filename);
+  const wrongFilePath = __dirname + "/files/wrongFilename.txt";
+  const correctFilePath = __dirname + "/files/properFilename.md";
   const errMessage = "FS operation failed";
 
   try {
