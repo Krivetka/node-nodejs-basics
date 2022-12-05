@@ -10,7 +10,7 @@ const copy = async () => {
     if (!existsSync(srcPath) || existsSync(copyPath)) {
       throw new Error(errMessage);
     }
-    await cp(srcPath, copyPath, { recursive: true });
+    cp(srcPath, copyPath, { recursive: true });
   } catch (error) {
     console.error(error);
   }

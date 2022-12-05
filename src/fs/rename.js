@@ -9,7 +9,7 @@ const rename = async () => {
     if (existsSync(correctFilePath) || !existsSync(wrongFilePath)) {
       throw new Error(errMessage);
     }
-    await renameSync(wrongFilePath, correctFilePath);
+    renameSync(wrongFilePath, correctFilePath);
   } catch (error) {
     console.error(error);
   }
